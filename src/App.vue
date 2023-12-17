@@ -1,26 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="main">
+    <!-- <login-component msg="Welcome to Your Vue.js App"/>
+    <accountComponent/>
+    <codeList/> -->
+    <mainComponent/>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import LoginComponent from './components/loginComponent.vue'
+// import accountComponent from './components/accountComponent.vue'
+// import codeList from './components/codeListComponent.vue'
+import mainComponent from './components/mainComponent.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    mainComponent
+    // LoginComponent,
+    // codeList,
+    // accountComponent
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

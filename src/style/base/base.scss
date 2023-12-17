@@ -1,0 +1,67 @@
+* {
+    background: var(--main-bg);
+    padding: 0;
+    box-sizing: border-box;
+}
+input[type="text"],
+input[type="tel"],
+input[type="password"] {
+    width: 15rem;
+    height: 1.5rem;
+    border: none;
+    border-bottom: solid 0.105rem var(--primary-color);
+    color: var(--white-color);
+    font-size: 1rem;
+    display: block;
+    outline: none;
+}
+input[type="text"].inputInvalid,
+input[type="password"].inputInvalid,
+input[type="tel"].inputInvalid {
+    border-bottom: solid 0.105rem var(--alert-color);
+}
+label {
+    display: block;
+    color: var(--white-color);
+    position: absolute;
+    transition: 0.2s;
+    font-size: 1.2rem;
+    top: 0;
+}
+.labelFocus {
+    top: -0.8rem;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+.labelInvalid {
+    top: -0.8rem;
+    color: var(--alert-color);
+    font-size: 0.9rem;
+}
+.btn {
+    width: 9rem;
+    height: 2.2rem;
+    display: block;
+    margin: 0 auto;
+    padding: 0.4rem;
+    margin-top: 2rem;
+    background: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    border-radius: 1rem;
+    color: var(--white-color);
+}
+span {
+    color: var(--primary-color);
+    font-size: 1.7rem;
+}
+.btn:disabled {
+    opacity: 10%;
+    cursor: auto;
+}
+.icon {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    background: #000;
+}
