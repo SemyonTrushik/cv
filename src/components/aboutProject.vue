@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <loginComponent/>
+    <!-- <loginComponent/> -->
     <div class="info">
       <h1>Welcome to the "Unique Codes and Opportunities" Project!</h1>
       <div class="about">
@@ -31,10 +31,10 @@
   </div>
 </template>
 <script>
-import loginComponent from './loginComponent.vue'
+// import loginComponent from './loginComponent.vue'
 export default {
   components: {
-    loginComponent
+    // loginComponent
   }
 }
 </script>

@@ -1,16 +1,16 @@
 <template>
-  <button
-      class="btn">{{ button }}</button>
+  <button :type="type"
+          class="btn">{{ button }}</button>
 </template>
+
 <script>
 export default {
   props: {
-    button: String
-  },
-  data () {
-    return {
-      formInvalid: false
-    }
+    button: String,
+    type: String
   }
 }
 </script>
+
+<style scoped>
+</style>

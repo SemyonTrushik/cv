@@ -1,30 +1,56 @@
 <template>
-  <form class="form">
-    <inputComponent
-        label="Email"
-        type="text"
-        v-model="emailValue"
-        :is-focused="isEmailFocused"
-        @update:is-focused="updateIsEmailFocused"
-    />
-    <inputComponent
-        type="password"
-        label="Password"
-        v-model="passwordValue"
-        :is-focused="isPasswordFocused"
-        @update:is-focused="updateIsPasswordFocused"
-    />
-    <inputComponent
-        label="Phone"
-        type="tel"
-        v-model="PhoneValue"
-        :is-focused="isPasswordFocused"
-        @update:is-focused="updateIsPhoneFocused"
-    />
-    <buttonComponent button="Sign In"
-                     :formValid="emailValue"
-    />
-  </form>
+  <div>
+    <form v-if="isRegistrationFormVisible">
+      <buttonComponent
+          button="to Login"
+          @click="switchForms"
+      />
+      <inputComponent
+          label="Email"
+          type="text"
+          @inputChange="handleInputChange('emailValue', $event)"
+      />
+      <inputComponent
+          type="password"
+          label="Password"
+          @inputChange="handleInputChange('passwordValue', $event)"
+      />
+      <inputComponent
+          label="Phone"
+          type="tel"
+          @inputChange="handleInputChange('phoneValue', $event)"
+      />
+      <buttonComponent
+          type="button"
+          @click="registration"
+          :disabled="isFormInvalid"
+          button="Sign In"
+      />
+    </form>
+
+    <form v-else>
+      <buttonComponent
+          button="to Registration"
+          @click="switchForms"
+      />
+      <inputComponent
+          label="Email"
+          type="text"
+          @inputChange="handleInputChange('emailValue', $event)"
+      />
+      <inputComponent
+          type="password"
+          label="Password"
+          @inputChange="handleInputChange('passwordValue', $event)"
+      />
+      <buttonComponent
+          type="button"
+          @click="login"
+          :disabled="isFormInvalid"
+          button="Log In"
+      />
+    </form>
+  </div>
 </template>
 
 <script>
@@ -38,27 +64,50 @@ export default {
   },
   data () {
     return {
-      emailValue: '',
-      passwordValue: '',
-      PhoneValue: '',
-      isEmailFocused: false,
-      isPasswordFocused: false,
-      isPhoneFocused: false,
-      formValid: false
+      isRegistrationFormVisible: true,
+      userData: {
+        emailValue: '',
+        passwordValue: '',
+        phoneValue: ''
+      }
+    }
+  },
+  computed: {
+    isFormInvalid () {
+      const isEmailEmpty = this.userData.emailValue.trim() === ''
+      const isPasswordEmpty = this.userData.passwordValue.trim() === ''
+      const isPhoneEmpty = this.isRegistrationFormVisible
+        ? this.userData.phoneValue.trim() === ''
+        : false
+
+      return isEmailEmpty || isPasswordEmpty || isPhoneEmpty
     }
   },
   methods: {
-    updateIsEmailFocused (value) {
-      this.isEmailFocused = value
+    handleInputChange (property, value) {
+      this.userData[property] = value
     },
-    updateIsPasswordFocused (value) {
-      this.isPasswordFocused = value
+    switchForms () {
+      this.clearForms()
+      this.isRegistrationFormVisible = !this.isRegistrationFormVisible
     },
-    updateIsPhoneFocused (value) {
-      this.isPhoneFocused = value
+    login () {
+      console.log('Email:', this.userData.emailValue)
+      console.log('Password:', this.userData.passwordValue)
+    },
+    registration () {
+      console.log('Email:', this.userData.emailValue)
+      console.log('Password:', this.userData.passwordValue)
+      console.log('Phone:', this.userData.phoneValue)
+    },
+    clearForms () {
+      this.userData.emailValue = ''
+      this.userData.passwordValue = ''
+      this.userData.phoneValue = ''
     }
   }
 }
 </script>
 
-<style></style>
+<style scoped lang="scss">
+</style>

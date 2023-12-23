@@ -1,15 +1,20 @@
 <template>
   <div class="input-wrapper">
-    <input v-model="inputValue"
-           :id="inputId"
-           :type="type"
-           :class="{'inputInvalid': isInputTouchedAndEmpty}"
-           @focus="setFocus(true)"
-           @blur="handleBlur(true)" />
-    <label :for="inputId"
-           :class="{ 'labelFocus': isInputFocusedOrFilled, 'labelInvalid': isInputTouchedAndEmpty }">{{ label }}</label>
+    <input
+        v-model="inputValue"
+        :id="inputId"
+        :type="type"
+        :class="{ 'inputInvalid': isInputTouchedAndEmpty }"
+        @input="onInputValueChange"
+        @focus="setFocus(true)"
+        @blur="handleBlur(true)"
+    />
+    <label
+        :for="inputId"
+        :class="{ 'labelFocus': isInputFocusedOrFilled, 'labelInvalid': isInputTouchedAndEmpty }"
+    >{{ label }}</label>
     <p class="require"
-       v-if="isInputTouchedAndEmpty">{{ `Is field require` }}</p>
+       v-if="isInputTouchedAndEmpty">{{ `Is field required` }}</p>
   </div>
 </template>
 
@@ -41,6 +46,9 @@ export default {
     },
     handleBlur (value) {
       this.isInputTouched = value
+    },
+    onInputValueChange () {
+      this.$emit('inputChange', this.inputValue, this.label)
     }
   }
 }
@@ -58,4 +66,5 @@ export default {
     font-size: 0.8rem;
     color: var(--alert-color);
   }
-}</style>
+}
+</style>

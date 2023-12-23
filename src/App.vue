@@ -1,23 +1,23 @@
 <template>
   <div class="main">
-    <!-- <login-component msg="Welcome to Your Vue.js App"/>
-    <accountComponent/>
+    <login-component msg="Welcome to Your Vue.js App"/>
+    <!-- <accountComponent/>
     <codeList/> -->
-    <mainComponent/>
+    <!-- <aboutProject/> -->
   </div>
 </template>
 
 <script>
-// import LoginComponent from './components/loginComponent.vue'
+import LoginComponent from './components/loginComponent.vue'
 // import accountComponent from './components/accountComponent.vue'
 // import codeList from './components/codeListComponent.vue'
-import mainComponent from './components/mainComponent.vue'
+// import aboutProject from './components/aboutProject.vue'
 
 export default {
   name: 'App',
   components: {
-    mainComponent
-    // LoginComponent,
+    // aboutProject
+    LoginComponent
     // codeList,
     // accountComponent
   }
