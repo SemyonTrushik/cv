@@ -44,9 +44,9 @@ export default {
     font-size: 1.5rem;
     display: flex;
     flex-direction: row;
-    width: 80rem;
     gap: 2rem;
     margin: 0 auto;
+    padding: 0 1rem;
     .info {
         .about, .work, .present, .security, .join {
             .description {

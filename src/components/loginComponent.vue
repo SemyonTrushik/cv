@@ -92,13 +92,10 @@ export default {
       this.isRegistrationFormVisible = !this.isRegistrationFormVisible
     },
     login () {
-      console.log('Email:', this.userData.emailValue)
-      console.log('Password:', this.userData.passwordValue)
+      console.log(this.userData.emailValue, this.userData.passwordValue)
     },
     registration () {
-      console.log('Email:', this.userData.emailValue)
-      console.log('Password:', this.userData.passwordValue)
-      console.log('Phone:', this.userData.phoneValue)
+      console.log(this.userData.emailValue, this.userData.passwordValue, this.userData.phoneValue)
     },
     clearForms () {
       this.userData.emailValue = ''
