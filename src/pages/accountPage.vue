@@ -6,22 +6,26 @@
       <div class="surname">TRUSHIK</div>
       <div class="year">27 y.o</div>
     </div>
-    <div class="project">
-      <div class="project-title">Buy AND Take</div>
-      <div class="project-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis odit alias quae ullam. Perspiciatis facilis suscipit odit quo voluptatem fugit commodi doloribus ex adipisci saepe, aliquid aspernatur deserunt repellat quidem.</div>
+    <div class="history">
+      <div class="history-title">History</div>
+      <div class="history-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis odit alias quae ullam. Perspiciatis facilis suscipit odit quo voluptatem fugit commodi doloribus ex adipisci saepe, aliquid aspernatur deserunt repellat quidem.</div>
+      <div class="history-buy">you buy 30 ticks and spent 900$</div>
     </div>
   </div>
 </template>
+<script>
+export default {
+}
+</script>
 <style lang="scss" scoped>
 .account-wrapper {
   color: var(--white-color);
   display: flex;
   flex-direction: row;
   margin: 0 auto;
-  width: 70rem;
   margin-top: 2rem;
   .info {
-    width: 20rem;
+    width: 100%;
     text-align: center;
     .icon {
       margin: 0 auto;
@@ -31,12 +35,12 @@
       align-self: center;
     }
   }
-  .project {
+  .history {
     margin-top: 5rem;
-    .project-title {
+    .history-title {
       text-align: center;
     }
-    .project-description {
+    .history-description {
       margin-top: 2rem;
     }
   }

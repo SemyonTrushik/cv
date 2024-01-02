@@ -66,3 +66,16 @@ span {
     border-radius: 50%;
     background: #000;
 }
+.navbar {
+    display: flex;
+    width: 100%;
+    align-self: center;
+    padding: 0 1rem;
+    justify-content: end;
+    font-size: 1.1rem;
+    padding-top: 0.5rem;
+    a {
+        color: var(--white-color);
+        margin: 0 1rem;
+    }
+}
