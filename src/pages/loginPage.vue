@@ -54,8 +54,8 @@
 </template>
 
 <script>
-import inputComponent from './inputComponent.vue'
-import buttonComponent from './buttonComponent.vue'
+import inputComponent from '../components/inputComponent.vue'
+import buttonComponent from '../components/buttonComponent.vue'
 
 export default {
   components: {
